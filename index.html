@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Комплексные числа</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Slide 1</section>
+				<section>Slide 2</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="js/algebrite.bundle-for-browser.js"></script>
+		<script src="js/math.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true, //Сохранение текущего слайда при обновлении презентации 
+				center: false, //Прижимаем заголовок к верху страницы
+				slideNumber: true, //Номер страницы в правом углу страницы
+				controls: true, //Стрелки право и лево
+				dependencies: [
+					{src: 'plugin/menu/menu.js'}, //Подключим меню
+				],
+				menu : {numbers: true,markers: true,}, //Настройки меню
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX] 
+					//Подключим markdown, подсветку синтаксиса и заметки слайда
+			});
+		</script>
+	</body>
+</html>
