@@ -9,15 +9,134 @@
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
-
+		
+		
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown  data-separator-notes="^Note:" data-menu-title = "Начало">
+					<script type="text/template">
+						Комплексные числа
+						=========================
+				
+						Note:
+						Заметки слайда
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Определение комплексных чисел
+						----------------------------
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Определение">
+					<script type="text/template">
+						Комплексные числа – это числа вида $z=x+iy$, где x, y – действительные числа, i – мнимая единица, удовлетворяющая соотношению $i^{2}=-1$.
+
+						Число $x$ называется действительной частью комплексного числа z и имеет обозначение $x = \text{Re } z$.
+
+						Число $y$ называется мнимой частью комплексного числа z и имеет обозначение $y = \text{Im } z$.
+					</script>
+				</section>
+				
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Формы записи комплексных чисел
+						-----------------
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Алгебраическая форма записи комплексных чисел
+						-----------------
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Алгебраическая">
+					<script type="text/template">
+						Алгебраической формой комплексного числа называется запись комплексного числа z в виде z=x+iy, где x и y – действительные числа, 
+						i – мнимая единица, удовлетворяющая соотношению $i^{2}=-1 .$
+						Число x называется действительной частью комплексного числа z и имеет обозначение $x = \text{Re } z.$
+
+						Число y называется мнимой частью комплексного числа z и имеет обозначение $y = \text{Im } z .$
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Тригонометрическая форма записи комплексных чисел
+						-----------------
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Тригонометрическая">
+					<script type="text/template">
+						Тригонометрической формой комплексного числа z=x+iy, не равного нулю, 
+						называется запись $z = r (\cos \varphi + i \sin \varphi)$, где $r=\sqrt{x^{2}+y^{2}}$ — модуль комплексного числа z.
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Показательная форма записи комплексных чисел
+						-----------------
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Показательная">
+					<script type="text/template">
+						Показательной формой комплексного числа называется выражение $z=r e^{i \varphi}$, где $r=|z|=\sqrt{x^{2}+y^{2}}$ — 
+						модуль комплексного числа, $e^{i \varphi}$ — расширение экспоненты на случай, когда показатель степени является комплексным числом.
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Примеры форм записи комплексных чисел
+						-----------------
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Пример алгебраической">
+					<script type="text/template">
+						Комплексное число $z=3-2i$ и его сопряженное число $\overline{z}=3+2i$ записаны в алгебраической форме.
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Пример тригонометрической">
+					<script type="text/template">
+						Выразить число $z=1-i$ в тригонометрической форме.
+
+						Ответ:	$z = \sqrt{2}(\cos(-\frac{\pi}{4}) + i\sin(-\frac{\pi}{4}))$
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Пример показаельной">
+					<script type="text/template">
+						Записать комплексное число $z=2i$ в показательной форме. 
+
+						Ответ:	$z = 2e^{\frac{\pi}{2}i}$
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Программа для конвертации числа из алгебраической записи в 2 другие.
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Конец?">
+					<script type="text/template">
+						Спасибо за внимание
+						-----------------------------
+					</script>
+				</section>
 			</div>
 		</div>
 
@@ -25,20 +144,40 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
-		<script src="js/algebrite.bundle-for-browser.js"></script>
-		<script src="js/math.js"></script>
+		<script src="plugin/math.js/math.js"></script>
+		<script src="plugin/math-katex/math-katex.js"></script>
+		<script src="plugin/algebrite/algebrite.bundle-for-browser.js"></script>
+		<script src="plugin/underscore/underscore-min.js"></script>
+		<script src="plugin/plotly/plotly.min.js"></script>
+
 		<script>
+
 			Reveal.initialize({
-				hash: true, //Сохранение текущего слайда при обновлении презентации 
-				center: false, //Прижимаем заголовок к верху страницы
-				slideNumber: true, //Номер страницы в правом углу страницы
-				controls: true, //Стрелки право и лево
+				hash: true, //При обновлении страницы, будем возвращаться на туже страницу
+				center: true, //отменим вертикальное центрирование
+				slideNumber: true, //Покажем номер слайды
+				transition: 'zoom',
+				math: {
+					notificationsEnabled: true, //включаем отображение ошибок katex
+				},
+				menu: {
+					number: true,
+					markers: true,
+					keyboard: true,
+
+				},
+				//Подключаем LaTeX рендер
 				dependencies: [
-					{src: 'plugin/menu/menu.js'}, //Подключим меню
-				],
-				menu : {numbers: true,markers: true,}, //Настройки меню
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX] 
-					//Подключим markdown, подсветку синтаксиса и заметки слайда
+					{
+						src: 'plugin/math-katex/math-katex.js', //Подключаем рендер katex
+						async: true,
+						callback: () => {},
+					}, {
+						src: 'plugin/menu/menu.js',
+						async: true,
+					}],
+				//Рендер Маркдауна, Подвестка синтаксиса, Заметки
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
 	</body>
