@@ -13,6 +13,14 @@
 		
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<style>
+			input, select {
+				font-size: 25px;
+			}
+			p {
+				font-size: 30px;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -117,7 +125,7 @@
 					</script>
 				</section>
 
-				<section data-markdown data-menu-title = "Пример показаельной">
+				<section data-markdown data-menu-title = "Пример показательной">
 					<script type="text/template">
 						Записать комплексное число $z=2i$ в показательной форме. 
 
@@ -128,6 +136,186 @@
 				<section data-markdown data-menu-title = "Разделитель">
 					<script type="text/template">
 						Программа для конвертации числа из алгебраической записи в 2 другие.
+					</script>
+				</section>
+
+				<section>
+					<h3>Конвертер</h3>
+					z = 
+					<input type="text" name="" id="converter_value_Re" placeholder="0" style="width: 20px;"> + i
+					<input type="text" name="" id="converter_value_Im" placeholder="0" style="width: 20px;"> <br>
+
+					<select id="converter_type">
+						<option value="Triag">Тригонометрическая</option>
+						<option value="Poc">Показательная</option>
+					</select>
+
+					<input type="button" id="converter_button" value="Конвертировать"> <br>
+
+					<output id="converter_out"></output>
+				</section>
+				
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Геометрическое изображение комплексных чисел
+						---------------
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "ГИКЧ-1">
+					<script type="text/template">
+						Если для геометрического изображения действительных чисел 
+						используются точки числовой прямой, то для изображения комплексных чисел 
+						служат точки координатной плоскости Оху. Плоскость называется 
+						комплексной, если каждому комплексному числу $z=x+iy$
+						ставится в соответствие точка М(x;y). 
+						И, наоборот, каждую точку М(x;y) координатной 
+						плоскости можно рассматривать как образ комплексного числа $z=x+iy$. 
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "ГИКЧ-2">
+					<script type="text/template">
+						Ось Ох называют действительной осью, так как на ней лежат действительные числа , 
+						а ось Оу, на которой расположены чисто мнимые числа - мнимой осью.
+						Комплексное число $z=x+iy$ можно задавать с помощью радиус-вектора $\vec{r} = \vec{OM} = (x,y)$. 
+						Длина вектора r, изображающего комплексное число z, называется модулем этого числа
+						и обозначается z или r.
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "ГИКЧ-3">
+					<script type="text/template">
+						Модуль определяется по формуле $r = |z| = \sqrt{x^2 + y^2}$
+						Величина угла между положительным направлением действительной оси 
+						и вектором r называется аргументомкомплексного числа и обозначается $\phi$
+						или Arg z. Аргумент комплексного числа величина многозначная и определяется с точностью до слагаемого 2πk.
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "ГИКЧ-4">
+					<script type="text/template">
+						$\phi = Arg z = arg z + 2{\pi}k, -\pi < arg z \leqslant \pi$
+						(arg z – главное значение аргумента).
+						Аргумент числа z=0 определен. Очевидно, что $a = r\cos{\phi}, b = r\sin(\phi)$ Тогда аргумент φ определяется из 
+						формул $\cos{\phi} = \frac{x}{r}, \sin{\phi} = \frac{y}{r}, \tan{\phi} = \frac{x}{y}$
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Программа для построения комплексной плоскости">
+					<script type="text/template">
+						Сложение, вычитание, умножение, деление комплексных чисел
+						---------------
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "Разделитель">
+					<script type="text/template">
+						Сложение, вычитание, умножение, деление комплексных чисел
+						---------------
+					</script>
+				</section>
+				
+				<section data-markdown>
+					<script type="text/template">
+						<h4>Сложение и вычитание комплексных чисел</h4>
+						<p>
+						Сложение и вычитание комплексных чисел   $z1 = x_1 + i y_1$ и $z_2 = x_2 + i y_2 $
+						осуществляется по правилам сложения и вычитания двучленов (многочленов)   
+						$x_1 + i y_1 $  и $  x_2 + i y_2$ , т.е. в соответствии с формулами
+						$z_1 + z_2 = x_1 + i y_1 + x_2 + i y_2 = x_1 + x_2 + i (y_1 + y_2)$ ,
+						$z_1 - z_2 = x_1 + i y_1 - (x_2 + i y_2) = x_1 - x_2 + i (y_1 - y_2)$ . </p>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<h4>Пример сложения и вычитания комплексных чисел</h4>
+						$z_1 = 2 + 3i ,  z_2 = -7 + 5i$
+						$z_1 + z_2 = 2 - 7 + 3i + 5i = -5 + 8i$
+						$z_1 - z_2 = 2 -(-7) + 3i - 5i = 9 -2i$
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<h4>Умножение комплексных чисел</h4>
+						<p>
+						Умножение комплексных чисел   $z_1 = x_1 + i y_1$ и   $z_2 = x_2 + i y_2$ , так же, 
+						как и операции сложения и вычитания, осуществляется по правилам умножения двучленов (многочленов), 
+						однако при этом учитывается важнейшее равенство, имеющее вид:
+						$i^2 = - 1$. <br> По этой причине
+						
+						$z_1 z_2 = (x_1 + i y_1) (x_2 + i y_2) = x_1x_2 + i x_1 y_2 + i y_1x_2 + i^2 y_1 y_2 = $
+						$= x_1x_2 + i x_1y_2 + i y_1x_2 - y_1 y_2 = x_1x_2 - y_1 y_2 + i (x_1 y_2 + i x_2 y_1) $. </p>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<h4>Пример умножения комплексных чисел</h4>
+						$z_1 = 2 + 3i ,  z_2 = -7 + 5i$
+						$z_1 z_2 = (2+3i)(-7 + 5i) = -14 -21i + $
+						$+10i +15i^2 = -29 - 11i$
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<h4>Деление комплексных чисел</h4>
+						<p>
+						Деление комплексного числа   $z_1 = x_1 + i y_1$   на отличное от нуля комплексное число   $z_2 = x_2 + i y_2   $
+						осуществляется по формуле <img src="img/Frac.png" alt="Формула деления комплексного числа"> <br>
+						
+						Деление на нуль запрещено. </p>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<h4>Пример деления комплексных чисел</h4>
+						$z_1 = 2 + 3i ,  z_2 = -7 + 5i$
+						$\frac{z_1}{z_2} = \frac{2*(-7) + 3*5}{(-7)^2 + 5^2} + i\frac{(-7)*3 - 2*5 }{(-7)^2 + 5^2} = $ <br>
+						$ = \frac{1}{74} - i\frac{31}{74}$
+					</script>
+				</section>
+
+				<section data-menu-title = "Программа для сложения, вычитания, умножения, деления комплексных чисел">
+					$z_1 = $
+					<input type="text" name="" id="operation_value_Re_1" placeholder="0" style="width: 20px;"> + i
+					<input type="text" name="" id="operation_value_Im_1" placeholder="0" style="width: 20px;"> 
+
+					<select id="operation_type">
+						<option value="plus">+</option>
+						<option value="minus">-</option>
+						<option value="diag">*</option>
+						<option value="del">/</option>
+					</select>
+
+					$z_2 = $
+					<input type="text" name="" id="operation_value_Re_2" placeholder="0" style="width: 20px;"> + i
+					<input type="text" name="" id="operation_value_Im_2" placeholder="0" style="width: 20px;"> <br>
+
+					<input type="button" id="operation_button" value="Посчитать"> <br>
+
+					<output id="operation_out"></output>
+				</section>
+
+				<section data-markdown data-menu-title = "meme1">
+					<script type="text/template">
+						<img src="img/meme1.png" alt="meme1">
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "meme2">
+					<script type="text/template">
+						<img src="img/meme3.jpg" alt="meme3">
+					</script>
+				</section>
+
+				<section data-markdown data-menu-title = "meme3">
+					<script type="text/template">
+						<img src="img/meme2.png" alt="meme2">
 					</script>
 				</section>
 
@@ -180,5 +368,61 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
+			<script>
+				window.onload = () => {
+
+					// Конвертер величин
+					document.querySelector('#converter_button').onclick = () => {
+
+					let Re = document.querySelector('#converter_value_Re');
+					let Im = document.querySelector('#converter_value_Im');
+					let converterType = document.querySelector('#converter_type');
+					let converterOut = document.querySelector('#converter_out');
+
+					if (Re.value === '') {
+						Re.value = 0;
+					}
+					if (Im.value === '') {
+						Im.value = 0;
+					}
+
+					let currentType = +converterType.options.selectedIndex;
+					if (currentType === 0) {
+						result = katex.renderToString(5/4);
+					} else if (currentType === 1) {
+						result = katex.renderToString(5/4);
+					}
+
+					converterOut.innerHTML = result;
+					}
+
+					// Программа для сложения, вычитания, умножения, деления комплексных чисел
+					document.querySelector('#operation_button').onclick = () => {
+
+					let Re1 = document.querySelector('#operation_value_Re_1');
+					let Im1 = document.querySelector('#operation_value_Im_1');
+					let Re2 = document.querySelector('#operation_value_Re_2');
+					let Im2 = document.querySelector('#operation_value_Im_2');
+					let operationType = document.querySelector('#operation_type');
+					let operationOut = document.querySelector('#operation_out');
+
+					if (Re1.value === '') {
+						Re1.value = 0;
+					}
+					if (Im1.value === '') {
+						Im1.value = 0;
+					}
+
+					let currentType = +operationType.options.selectedIndex;
+					if (currentType === 0) {
+						result = katex.renderToString(5/4);
+					} else if (currentType === 1) {
+						result = katex.renderToString(5/4);
+					}
+
+					operationOut.innerHTML = result;
+					}
+				}
+			</script>
 	</body>
 </html>
