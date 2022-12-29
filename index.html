@@ -390,8 +390,8 @@
 						Im.value = 0;
 					}
 
-					let norma = Math.sqrt(Re.value*Re.value + Im.value*Im.value);
-					let phi = Math.atan(Im.value/Re.value);
+					let norma = Math.sqrt(+Re.value*+Re.value + +Im.value*+Im.value);
+					let phi = Math.atan(+Im.value/+Re.value);
 
 					let currentType = +converterType.options.selectedIndex;
 					if (currentType === 0) {
@@ -399,7 +399,7 @@
 						else result = norma + 'Cos(' + phi + ') + i Sin(' + phi + ')';
 					} else if (currentType === 1) {
 						if(Re.value == 0 && Im.value == 0) result = 0;
-						else result = norma  + 'e';
+						else result = norma  + 'e^(' + phi + 'i)';
 					}
 
 					converterOut.innerHTML = result;
@@ -430,16 +430,27 @@
 					}
 
 					let currentType = +operationType.options.selectedIndex;
-					var summRe = Re1.value + Re2.value;
-					var summIm = Im1.value + Im2.value;
+
+					let summRe = +Re1.value + +Re2.value;
+					let summIm = +Im1.value + +Im2.value;
+					let unSummRe = +Re1.value - +Re2.value;
+					let unSummIm = +Im1.value - +Im2.value;
+
 					if (currentType === 0) {
-						result1 = summRe + ' + ' + summIm + 'i';
+						if(summIm < 0){result1 = summRe + ' - ' + Math.abs(summIm) + 'i';}
+						else if(unSummIm == 0){result1 = summRe;}
+						else {result1 = summRe + ' + ' + summIm + 'i';}
+
 					} else if (currentType === 1) {
-						result1 = 1;
+						if(unSummIm < 0) {result1 = unSummRe + ' - ' + Math.abs(unSummIm) + 'i';}
+						else if(unSummIm == 0) {result1 = unSummRe;}
+						else {result1 = unSummRe + ' + ' + unSummIm + 'i';}
+
 					}else if (currentType === 2) {
-						result1 = 2;
+						result1 = (+Re1.value*+Re2.value - +Im1.value*+Im2.value) + ' + ' + (+Im1.value*+Re2.value + +Im2.value*+Re1.value) + 'i';
 					}else if (currentType === 3) {
-						result1 = 3;
+						result1 = (+Re1.value*+Re2.value + +Im1.value*+Im2.value)/(+Re2.value*+Re2.value + +Im2.value*+Im2.value) + ' + ' 
+						+ (+Im1.value*+Re2.value - +Im2.value*+Re1.value)/(+Re2.value*+Re2.value + +Im2.value*+Im2.value) + 'i';
 					}
 
 					operationOut.innerHTML = result1;
